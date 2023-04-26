@@ -1,3 +1,13 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700;800&display=swap'); */
+:root {
+    --color-main: #CC00CC;
+    --color-secondary: rgb(170, 0, 255);
+    --color-bg: rgba(0,0,0,.8);
+    --color-text: #8c8c8c;
+    /* --font-size: 4rem; */
+    --text-shadow: 5px 5px 5px #000000;
+}
+
 body {
     margin: 0;
     background-image: url('background.jpg');
@@ -5,7 +15,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh; /* Viewport-Height */
-    color: white;
+    font-family: 'Roboto Slab', serif;
+    /* font-size: var(--font-size); */
 }
 
 .window {
@@ -17,16 +28,18 @@ body {
 
 .clock {
     font-size: 4rem;
-    font-weight: 700;
-    text-shadow: 5px 5px 5px #000000;
+    font-weight: 800;
+    text-shadow: var(--text-shadow);
+    margin-bottom: .8rem;
+    color: var(--color-main);
 }
 
 .container {
     display: flex;
     flex-direction: row; /* Flexbox-Standart ist row */
     flex-wrap: no-wrap;
-    justify-content: space-around; /* Justify => Alignment auf Primärachse */
-    align-items: center; /* Align => Alignment auf der Sekundärachse */
+    justify-content: space-evenly; /* Justify => Alignment auf Primärachse */
+    /* align-items: center; Align => Alignment auf der Sekundärachse */
     /* align-content: flex-end; */
     width: 100%;
 }
@@ -35,19 +48,44 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 400px;
-    border: 7px double rgb(193, 11, 186);
+    min-height: 250px;
+    width: 18%;
+    min-width: fit-content;
+    border: 7px double var(--color-secondary);
     border-radius: 20px;
-    background-color: rgba(0,0,0,.8);
+    background-color: var(--color-bg);
+    padding: 15px;
+    font-size: 1.3rem; /* Relative Schriftgröße: 
+        Basierend auf Font-Size des Browsers */
+    margin: 0px;
 }
 
-ul.list > li > a {
-    text-decoration: none;
-    color: lightgray;
+h1.bookmark-title {
+    font-size: 1.5em; /* Relative Schriftgröße: 
+    Basierend auf Font-Size des Parent-Elements */
+    color: var(--color-main);
+    font-weight: 700;
 }
 
 ul.list {
     list-style-type: none;
     padding-left: 5px;
 }
-/* Huhu */
+/* Terminal öffnen/schließen: strg+ö */
+
+ul.list > li > a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size:  .8em;
+    font-weight: 500;
+}
+
+/* Pseudo-Klasse */
+/* Beschreibt einen belibigen State eines Elements */
+/* z.B. Hover, Focus, first-child,... */
+ul.list > li > a:hover {
+    color: var(--color-main);
+    font-weight: 800;
+    font-size: .9em;
+    transition: all .25s ease-in-out;
+}
