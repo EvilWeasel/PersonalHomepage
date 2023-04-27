@@ -42,6 +42,8 @@ body {
     /* align-items: center; Align => Alignment auf der Sekundärachse */
     /* align-content: flex-end; */
     width: 100%;
+    font-size: 1.3rem; /* Relative Schriftgröße: 
+        Basierend auf Font-Size des Browsers */
 }
 
 .link-container {
@@ -55,8 +57,6 @@ body {
     border-radius: 20px;
     background-color: var(--color-bg);
     padding: 15px;
-    font-size: 1.3rem; /* Relative Schriftgröße: 
-        Basierend auf Font-Size des Browsers */
     margin: 0px;
 }
 
@@ -93,22 +93,37 @@ ul.list > li > a:hover {
 
 @media only screen and (max-width: 960px) {
     /* Hier definieren wir unsere Regeln für das Mobile-Layout */
-    .container {
-        flex-direction: column;
-        align-items: center;
-        gap: .7em;
-    }
-    .window {
-        padding-top: 2em;
-    }
-    .link-container {
-        width: 70%;
-    }
     body {
         background-image: url('background-mobile.jpg');
         height: 100%;
     }
+    .window {
+        padding-top: 2em;
+    }
+    .clock {
+        margin-bottom: 20px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: .7em;
+        font-size: 1.5rem;
+    }
     .container:last-child {
         margin-bottom: 1em;
+    }
+    .link-container {
+        width: 70%;
+        min-height: fit-content;
+        /* min-height: auto; Standardwert: fit-content*/
+    }
+    h1.bookmark-title {
+        margin-top: 0;
+        margin-bottom: .5em;
+        font-size: 1.6em;
+    }
+    ul.list {
+        margin: 0;
+        font-size: 1.2em;
     }
 }
