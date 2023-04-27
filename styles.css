@@ -1,4 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700;800&display=swap'); */
+@font-face {
+    font-family: "GeileFont";
+    src: url("Matrix-MZ4P.ttf") format("truetype");
+}
 :root {
     --color-main: #CC00CC;
     --color-secondary: rgb(170, 0, 255);
@@ -15,8 +19,29 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh; /* Viewport-Height */
-    font-family: 'Roboto Slab', serif;
+    font-family: 'GeileFont', 'Roboto Slab', serif;
     /* font-size: var(--font-size); */
+}
+
+#search {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-bg);
+    box-sizing: border-box;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-field {
+    width: 80%;
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-main);
+    color: #d8d8d8;
+    border-radius: .5em;
+    font-size: 5rem;
+    outline: none;
 }
 
 .window {
