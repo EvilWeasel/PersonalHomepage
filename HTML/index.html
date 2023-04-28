@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-Basics</title>
+</head>
+<body>
+    <nav>
+        <ul style="display: flex; list-style-type: none; gap: 1em;">
+            <li><a href="../">Home</a></li>
+            <li><a href="https://start.duckduckgo.com">DDG</a></li>
+            <li><a href="https://www.w3schools.com">W3Schools</a></li>
+        </ul>
+    </nav>
+    
+    <h1>Table of Content</h1>
+    <ul>
+        <li><a href="#h1">Überschrift 1</a></li>
+        <li><a href="#h2">Überschrift 2</a></li>
+        <li><a href="#h3">Überschrift 3</a></li>
+        <li><a href="#h4">Überschrift 4</a></li>
+        <li><a href="#h5">Überschrift 5</a></li>
+        <li><a href="#h6">Überschrift 6</a></li>
+        <li><a href="#p1">Super Wichtiger Paragraph</a></li>
+    </ul>
+
+
+    <h1 id="h1">Überschrift 1</h1>
+    <h2 id="h2">Überschrift 2</h2>
+    <h3 id="h3">Überschrift 3</h3>
+    <h4 id="h4">Überschrift 4</h4>
+    <h5 id="h5">Überschrift 5</h5>
+    <h6 id="h6">Überschrift 6</h6>
+
+    <p>
+        Hallo <b>zusammen!</b> Mein Name ist <i>Tobias</i> :D
+    </p>
+    <!--
+        p.my_class {
+            font-style: italic;
+        }
+        p.my_class > strong {
+            font-style: normal;
+        }
+    -->
+    <p style="font-style: italic;" id="p1">
+        Lorem ipsum, <strong style="font-style: normal;">dolor</strong> sit amet <em>consectetur</em> adipisicing
+         elit. Expedita <small>nemo sequi</small> assumenda et error vel [<del>C#</del>|<ins>COOL</ins>], 
+         sunt ipsam repudiandae qui inventore laudantium, commodi 2<sub>4</sub> 6<sup>3</sup> repellendus temporibus. 
+         Possimus magni corporis officiis. Voluptatibus accusantium recusandae quas sed saepe numquam, 
+         quam quos enim, dolorum amet esse fugiat minima nam ipsam omnis unde!
+    </p>
+
+    <p>Hallo</p><p>P!</p>
+
+    <!-- Div-Elemente sind Block-Elemente 
+        => style: display: block -->
+    <div>Hallo</div><div>Div!</div>
+
+    <!-- Span-Elemente sind Inline-Elemente -->
+    <span>Hallo</span><span>Span!</span>
+
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, ipsam.</p>
+
+    <blockquote cite="https://1000-zitate.de/autor/Wolfgang+Amadeus+Mozart/">
+        Bei einer Oper muss schlechterdings die Poesie der Musik gehorsame Tochter sein.
+    </blockquote>
+
+    <p>Ich lasse mich gerne inspieren von Mozart, 
+        der sagte <q>Bei einer Oper muss schlechterdings die Poesie der Musik 
+            gehorsame Tochter sein.</q></p>
+    
+    <p>Mehr Infos zu HTML <a href="https://www.w3schools.com/" target="_blank">hier</a> auf dieser Webseite.</p>
+
+
+    <h1>Zurück zur <a href="../">Homepage</a></h1>
+
+    <a href="https://picsum.photos">
+        <img src="https://picsum.photos/200/200" alt="Picsum.Photos">
+    </a>
+    <a href="https://picsum.photos">
+        <img src="https://picsum.photos/seed/snickers/200/200" alt="Picsum.Photos">
+    </a>
+
+    <article>
+        <h2>Google Chrome</h2>
+        <p>Google Chrome ist ein Web-Browser, der von Google entwickelt wurde.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus laboriosam facere quod, blanditiis id eius.</p>
+        <img src="https://picsum.photos/600/200" alt="Bild von Google Chrome">
+    </article>
+    <article>
+        <h2>Google Chrome</h2>
+        <p>Google Chrome ist ein Web-Browser, der von Google entwickelt wurde.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus laboriosam facere quod, blanditiis id eius.</p>
+        <img src="https://picsum.photos/600/200" alt="Bild von Google Chrome">
+    </article>    
+    <div>
+        <h2>Google Chrome</h2>
+        <p>Google Chrome ist ein Web-Browser, der von Google entwickelt wurde.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus laboriosam facere quod, blanditiis id eius.</p>
+        <img src="https://picsum.photos/600/200" alt="Bild von Google Chrome">
+    </div>
+
+    <details>
+        <summary>HTML ist eine Markup Sprache</summary>
+        <p>
+            HTML (Hypertext Markup Language) ist eine Auszeichnungssprache, die verwendet wird, um Webseiten 
+            zu erstellen und zu strukturieren. Es wird verwendet, um den Inhalt einer Webseite zu definieren und ihm eine 
+            semantische Bedeutung zu geben. HTML ermöglicht es, Texte, Bilder, Videos und andere Medien auf einer Webseite
+             zu platzieren und zu formatieren. Es ist die Grundlage des World Wide Web und wird von allen Browsern unterstützt.
+        </p>
+        <img src="https://picsum.photos/200/200" alt="">
+    </details>
+
+    <footer>
+        <p>Visit Mozilla Corporation’s not-for-profit parent, the Mozilla Foundation.
+            Portions of this content are ©1998–2023 by individual mozilla.org contributors. Content available under a Creative Commons license.</p>
+    </footer>
+</body>
+</html>

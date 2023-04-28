@@ -13,6 +13,7 @@
 const clockElem = document.getElementById('clock');
 /* let => Modifizierbare Variable => Kann geändert werden */
 let x = 10; /* 10 => Number */
+x = 15;
 
 /* camelCase */
 /**
@@ -23,9 +24,10 @@ function getTime() {
     let time = date.toLocaleTimeString();
     clockElem.innerText = time;
 }
+/* Python => def getTime(): */
 
 /* setInterval(getTime, 100) */
-
+/* setInterval => WebAPI */
 setInterval(() => {
     let date = new Date();
     let time = date.toLocaleTimeString();
@@ -38,6 +40,7 @@ const searchString = "https://duckduckgo.com/?q=";
 
 /* EventListener => suchfeld öffnen SPACEBAR */
 document.addEventListener("keydown", event => {
+    /* console.log(event); */
     if(event.key == " ") {
         searchFieldElem.value = '';
         searchElem.style.display = 'flex';
@@ -51,6 +54,8 @@ document.addEventListener("keydown", event => {
 searchFieldElem.addEventListener("keydown", event => {
     if (event.key == "Enter") {
         let query = searchFieldElem.value;
+        /* Öffne im aktuellen Tab die Seite mit der angegebenen
+            URL */
         window.open(searchString + query, "_self");
     }
 });
