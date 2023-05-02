@@ -9,6 +9,10 @@
         option:checked {
             background-color: aqua;
         }
+
+        textarea {
+            resize: none;
+        }
     </style>
 </head>
 <body>
@@ -41,7 +45,11 @@
                 <!-- CheckBox => Benutzer kann Keine/Einen/Mehrere Werte aus einer Liste
                     von Werten wählen. Die Werte müssen dabei nicht zwangsläufig 
                     miteinander zusammenhängen. -->
-                <input checked type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <input checked
+                type="checkbox"
+                id="vehicle1"
+                name="vehicle1"
+                value="Bike">
                 <label for="vehicle1">Ich habe ein Fahrrad!</label>
                 <input type="checkbox" id="vehicle2" name="vehicle2" value="Scooter">
                 <label for="vehicle2">Ich habe einen Scooter!</label>
@@ -60,6 +68,7 @@
                     <option selected value="porsche">Porsche</option>
                 </select>
             </div>
+
             <div>
                 <label for="color">Wähle deine Lieblingsfarben aus:</label>
                 <select name="color" id="color" multiple>
@@ -74,6 +83,33 @@
                 </select>
             </div>
 
+            <!-- Achtung: textarea interpretiert alle Whitespace-Character,
+                wie z.B. " ", Tab-Character, Line-Feed, Carriage-Return -->
+            <label for="message">Hier könnte Ihre Werbung stehen...</label>
+            <textarea name="message"
+            id="message"
+            autofocus
+            cols="60"
+            minlength="30"
+            maxlength="100"
+            spellcheck="false"
+            wrap="off"
+            rows="12">The quick fox jumps...</textarea>
+            <!-- autofocus: Selektiert dieses eine Element automatisch, 
+                sobald die Seite geladen wurde. -->
+            <br>
+            <input type="color" id="colorInput" name="colorInput">
+            <br>
+            <input type="date" id="date" name="date">
+            <br>
+            <input type="time" id="time" name="time">
+            <br>
+            <input type="email" id="email" name="email">
+            <br>
+            <input type="file" id="file" name="file">
+            <br>
+
+            <input type="reset" value="Reset Formular">
 
             <input type="submit" value="Registrieren">
         </form>

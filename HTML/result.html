@@ -22,6 +22,8 @@
     <p>Fahrzeug-Marke: <span id="car_make"></span></p>
     <p>Lieblings-Farben: <span id="color"></span></p>
 
+    <p>Message (Textarea): <span id="message"></span></p>
+
 
     <script>
         function evalFormResults() {
@@ -39,7 +41,9 @@
 
             // Select Color
             const color = urlParams.get('color');
-            console.log(window.location.search);
+
+            // Textarea message
+            const message = urlParams.get('message');
 
             document.getElementById('username').innerText = username;
             document.getElementById('password').innerText = password;
@@ -52,6 +56,12 @@
             document.getElementById('car_make').innerText = carMake;
             // Select Color
             document.getElementById('color').innerText = color;
+            // Textarea message
+            document.getElementById('message').innerText = message;
+
+
+
+            console.log(window.location.search);
         }
     </script>
 </body>
