@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Autowerkstatt - Anmeldung</title>
+    <style>
+        .formgroup {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 5px;
+        }
+        .address:not(:first-child) {
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <!-- 
@@ -18,7 +28,32 @@
         Auto frei ab (Datum der Anlieferung des defekten Wagens)
      -->
      <form action="" method="GET">
-        
+        <div class="formgroup name">
+            <label for="name">Vorname</label>
+            <input type="text" id="name" name="name">
+            <label for="surname">Nachname</label>
+            <input type="text" id="surname" name="surname">
+        </div>
+        <div class="formgroup addressgroup">
+            <div class="address">
+                <label for="street">Straße</label>
+                <input type="text" id="street" name="street">
+                <label for="number">Hausnummer</label>
+                <input type="text" id="number" name="number">
+            </div>
+            <div class="address">
+                <label for="postal">PLZ</label>
+                <input type="text" id="postal" name="postal">
+                <label for="city">Wohnort</label>
+                <input type="text" id="city" name="city">
+            </div>
+        </div>
+        <div class="formgroup contact">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="tel">Telefon</label>
+            <input type="tel" name="tel" id="tel">
+        </div>
      </form>
 </body>
 </html>
