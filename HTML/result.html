@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergebnis</title>
+</head>
+<body onload="evalFormResults()">
+    <h1>Formulardaten</h1>
+    <p>Benutzername: <span id="username"></span></p>
+    <p>Passwort: <span id="password"></span></p>
+    <p>Sprachen: <span id="language"></span></p>
+
+    <p>Fahrzeuge:</p>
+    <ul id="vehicle_list">
+        <li>Fahrzeug 1: <span id="vehicle1"></span></li>
+        <li>Fahrzeug 2: <span id="vehicle2"></span></li>
+        <li>Fahrzeug 3: <span id="vehicle3"></span></li>
+    </ul>
+
+    <p>Fahrzeug-Marke: <span id="car_make"></span></p>
+    <p>Lieblings-Farben: <span id="color"></span></p>
+
+
+    <script>
+        function evalFormResults() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            const password = urlParams.get('password');
+            const language = urlParams.get('language');
+            // Checkbox Vehicle
+            const checkVehicle1 = urlParams.get('vehicle1');
+            const checkVehicle2 = urlParams.get('vehicle2');
+            const checkVehicle3 = urlParams.get('vehicle3');
+            
+            // Select Fahrzeug-Marke
+            const carMake = urlParams.get('car_make');
+
+            // Select Color
+            const color = urlParams.get('color');
+            console.log(window.location.search);
+
+            document.getElementById('username').innerText = username;
+            document.getElementById('password').innerText = password;
+            document.getElementById('language').innerText = language;
+            // Checkbox Vehicle
+            document.getElementById('vehicle1').innerText = checkVehicle1;
+            document.getElementById('vehicle2').innerText = checkVehicle2;
+            document.getElementById('vehicle3').innerText = checkVehicle3;
+            // Select Fahrzeug-Marke
+            document.getElementById('car_make').innerText = carMake;
+            // Select Color
+            document.getElementById('color').innerText = color;
+        }
+    </script>
+</body>
+</html>

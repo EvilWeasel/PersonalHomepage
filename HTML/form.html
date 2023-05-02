@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einfaches-Formular</title>
+    <style>
+        option:checked {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registrierungsformular</h1>
+    <!-- Wenn Formular über HTTP-GET gesendet wird, werden die
+        Parameter in Klartext über die URL übergeben -->
+    <form action="result.html" method="GET">
+        <!-- Wenn ein Label das "for" Attribut mit einer ID eines Form-Elements
+            gesetzt hat, dann wird beim Klick auf das Label automatisch
+            das Entsprechende Form-Element ausgewählt (Cursor hinein gesetzt) -->
+            <label for="username">Benutzername:</label>
+            <input type="text" name="username" id="username">
+            
+            <label for="password">Passwort:</label>
+            <input type="password" name="password" id="password">
+            
+            
+            <div class="radio">
+                <!-- RadioButtons => Benutzer kann EINE von einer Liste an 
+                        Auswahlmöglichkeiten auswählen -->
+                <input type="radio" name="language" id="htmlcss" value="HTML/CSS">
+                <label for="htmlcss">HTML/CSS</label>
+                <input type="radio" name="language" id="c#" value="C#">
+                <label for="c#">C#</label>
+                <input type="radio" name="language" id="sql" value="SQL">
+                <label for="sql">SQL</label>
+            </div>
+
+            <div class="checkbox">
+                <!-- CheckBox => Benutzer kann Keine/Einen/Mehrere Werte aus einer Liste
+                    von Werten wählen. Die Werte müssen dabei nicht zwangsläufig 
+                    miteinander zusammenhängen. -->
+                <input checked type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <label for="vehicle1">Ich habe ein Fahrrad!</label>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Scooter">
+                <label for="vehicle2">Ich habe einen Scooter!</label>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Car">
+                <label for="vehicle3">Ich habe ein Auto!</label>
+            </div>
+            
+            <div>
+                <label for="car_make">Wähle deine Lieblings-Automarke:</label>
+                <!-- Select => Standartverhalten: Benutzer kann eines von einer Liste an
+                        Werten auswählen. -->
+                <select name="car_make" id="car_make" size="2">
+                    <option value="audi">Audi</option>
+                    <option value="vw">VW</option>
+                    <option value="bmw">BMW</option>
+                    <option selected value="porsche">Porsche</option>
+                </select>
+            </div>
+            <div>
+                <label for="color">Wähle deine Lieblingsfarben aus:</label>
+                <select name="color" id="color" multiple>
+                    <option value="red">Rot</option>
+                    <option value="blue">Blau</option>
+                    <option value="black">Schwarz</option>
+                    <option value="white">Weiß</option>
+                    <option value="magenta">Magenta</option>
+                    <option value="purple">Lila</option>
+                    <option value="green">Grün</option>
+                    <option value="yellow">Gelb</option>
+                </select>
+            </div>
+
+
+            <input type="submit" value="Registrieren">
+        </form>
+    </body>
+</html>
