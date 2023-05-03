@@ -1,0 +1,15 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 2rem;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(5, 100px);
+}
+
+.output {
+    grid-column: 1 / -1; /* StartIndex / EndIndex */
+}
