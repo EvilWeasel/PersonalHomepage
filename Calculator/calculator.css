@@ -1,15 +1,41 @@
+:root {
+    --color-gradient1: #005ba1;
+    --color-gradient2: #2e00a1;
+}
+
 body {
     padding: 0;
     margin: 0;
     font-size: 2rem;
+    background: linear-gradient(to bottom, var(--color-gradient1), var(--color-gradient2), var(--color-gradient1), var(--color-gradient2));
+    height: 100vh;
 }
 
 .calculator-grid {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-columns: repeat(4, minmax(20vw, 1fr)); /* fr => fraction */
+    grid-template-rows: repeat(6, minmax(13vh, 1fr));
+    gap: .2em;
+    margin: .6em .6em 0 .6em;
+    color: white;
 }
 
 .output {
     grid-column: 1 / -1; /* StartIndex / EndIndex */
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: .3em;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .2);
+    color: white;
+    font-size: 1em;
 }
