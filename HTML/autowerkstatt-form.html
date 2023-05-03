@@ -7,13 +7,26 @@
     <title>Autowerkstatt - Anmeldung</title>
     <style>
         .formgroup {
-            border: 1px solid black;
+            border: 1px solid black; /* !important; Bitte nicht verwenden */
             margin: 10px;
             padding: 5px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* background-color: darkslateblue; */
         }
-        .address:not(:first-child) {
-            margin-top: 10px;
+
+        /* #personalInfo {
+            border: 5px solid pink;
         }
+        .name {
+            border: 2px solid black;
+        }
+        .name#personalInfo {
+            border: 10px solid red;
+            background-color: green;
+        } */
     </style>
 </head>
 <body>
@@ -27,33 +40,78 @@
         Model
         Auto frei ab (Datum der Anlieferung des defekten Wagens)
      -->
-     <form action="" method="GET">
-        <div class="formgroup name">
-            <label for="name">Vorname</label>
-            <input type="text" id="name" name="name">
-            <label for="surname">Nachname</label>
-            <input type="text" id="surname" name="surname">
+     <form action="result.html" method="GET">
+        <div class="formgroup name" id="personalInfo">
+            <div>
+                <label for="name">Vorname</label>
+                <input type="text" 
+                    id="name"
+                    name="name"
+                    required>
+            </div>
+            <div>
+                <label for="surname">Nachname</label>
+                <input type="text"
+                    id="surname"
+                    name="surname"
+                    required>
+            </div>
         </div>
         <div class="formgroup addressgroup">
             <div class="address">
-                <label for="street">Straße</label>
-                <input type="text" id="street" name="street">
-                <label for="number">Hausnummer</label>
-                <input type="text" id="number" name="number">
+                <div>
+                    <label for="street">Straße</label>
+                    <input type="text" id="street" name="street">
+                </div>
+                <div>
+                    <label for="number">Hausnummer</label>
+                    <input type="text" id="number" name="number">
+                </div>
             </div>
             <div class="address">
-                <label for="postal">PLZ</label>
-                <input type="text" id="postal" name="postal">
-                <label for="city">Wohnort</label>
-                <input type="text" id="city" name="city">
+                <div>
+                    <label for="postal">PLZ</label>
+                    <input type="text" id="postal" name="postal">
+                </div>
+                <div>
+                    <label for="city">Wohnort</label>
+                    <input type="text" id="city" name="city">
+                </div>
             </div>
         </div>
         <div class="formgroup contact">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-            <label for="tel">Telefon</label>
-            <input type="tel" name="tel" id="tel">
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div>
+                <label for="tel">Telefon</label>
+                <input type="tel" name="tel" id="tel">
+            </div>
         </div>
+        <div class="formgroup car">
+            <div>
+                <label for="make">Automarke</label>
+                <select name="make" id="make">
+                    <option value="audi">Audi</option>
+                    <option value="vw">VW</option>
+                    <option value="skoda">Skoda</option>
+                    <option value="bmw">BMW</option>
+                    <option value="porsche">Porsche</option>
+                    <option value="daf">DAF</option>
+                    <option value="volvo">Volvo</option>
+                </select>
+            </div>
+            <div>
+                <label for="model">Modell</label>
+                <input type="text" id="model" name="model">
+            </div>
+            <div>
+                <label for="carAvailableFrom">Auto verfügbar ab</label>
+                <input type="date" id="carAvailableFrom" name="carAvailableFrom">
+            </div>
+        </div>
+        <button type="submit">Reperatur anmelden</button>
      </form>
 </body>
 </html>
