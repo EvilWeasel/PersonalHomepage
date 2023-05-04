@@ -55,6 +55,7 @@ button {
 
 .output > * {
     text-align: end;
+    min-height: 1em;
 }
 /* 
 button[data-buxtehude="abc"] {

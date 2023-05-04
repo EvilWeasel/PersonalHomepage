@@ -22,16 +22,94 @@ const subtotalElem = document.querySelector('#previous-operand');
 // Result => Ergebnis
 const resultElem = document.querySelector('#current-operand');
 
+let operationLock = false;
+
 numberElems.forEach(btnNumber => {
     btnNumber.addEventListener('click', event => {
         // Wenn der geclickte Button "," ist UND 
         //  resultElem bereits ein Komma enthält
+        if (operationLock) {
+            resultElem.innerText = event.target.innerText;
+            operationLock = false;
+            return;
+        }
         if (event.target.innerText == "," && 
             resultElem.innerText.includes(",")) {
             return;
         }
+        if (resultElem.innerText == "0") {
+            if(event.target.innerText == "0") {
+                return;
+            } else {
+                resultElem.innerText = event.target.innerText;
+                return;
+            }
+        }
+
         resultElem.innerText += event.target.innerText;
-        // todo: operationen implementieren
     });
 });
 
+/*
+    C# foreach => JavaScript for
+    Achtung: 2 Varianten:
+        1. for in => Iteriert durch die Keys/Schlüssel/Member eines Objekts
+        2. for of => Iteriert durch eine Liste/Array/IEnumerable
+*/
+for (btnOperation of operationElems) {
+    btnOperation.addEventListener('click', event => {
+        operationLock = true;
+        let number = resultElem.innerText;
+        let operation = event.target.innerText;
+        subtotalElem.innerText = `${number} ${operation}`; // String-Interpolation
+        // resultElem.innerText = "0"; // Alternative zur Operation-Lock
+    });
+}
+
+function calculate(number1, number2, operation) {
+    number1 = Number(number1);
+    number2 = Number(number2);
+    let result = 0;
+
+    switch(operation) {
+        case "+": {
+            result = number1 + number2;
+            break;
+        }
+        case "-": {
+            result = number1 - number2;
+            break;
+        }
+        case "*": {
+            result = number1 * number2;
+            break;
+        }
+        case "/": {
+            result = number1 / number2;
+            break;
+        }
+        default: {
+            console.error("Operation-Type is not supported! Use either of these operations: + - * /")
+        }
+    }
+    
+    return result;
+}
+// console.log(calculate(1024, 42, '%'));
+
+
+equalsElem.addEventListener('click', event => {
+    let number1 = subtotalElem.innerText.split(' ')[0];
+    let number2 = resultElem.innerText;
+    let operation = subtotalElem.innerText.split(' ')[1];
+
+
+    resultElem.innerText = calculate(number1, number2, operation);
+});
+
+/** TODOS:
+ * Implement calculate for operation buttons
+ * Insert floatingpoint numbers with 0-prefix (0,42)
+ * Implement Delete, Clear and ClearAll
+ * Seperator for number-pairs (1.000.000)
+ */
