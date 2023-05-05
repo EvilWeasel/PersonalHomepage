@@ -1,0 +1,17 @@
+{
+    "Id": 1,
+    "Vorname": "Max",
+    "Nachname": "Müller",
+    "Addresse": {
+        "Strasse": "Neckargartacherstr.",
+        "Hausnummer": 12,
+        "PLZ": "12345",
+        "City": "Amsterdam"
+    },
+    "Freunde": [
+        2,
+        12,
+        42,
+        1024
+    ]
+}

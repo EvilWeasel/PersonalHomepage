@@ -121,6 +121,12 @@ ul.list > li > a:hover {
     transition: all .25s ease-in-out;
 }
 
+p {
+    color: white;
+    background-color: rgba(0,0,0,.6);
+    font-size: 1.5em;
+}
+
 
 @media only screen and (max-width: 960px) {
     /* Hier definieren wir unsere Regeln für das Mobile-Layout */

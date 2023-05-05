@@ -69,8 +69,7 @@ for (btnOperation of operationElems) {
             let number1 = subtotalElem.innerText.split(' ')[0];
             let number2 = resultElem.innerText;
             let operation = subtotalElem.innerText.split(' ')[1];
-        
-        
+                
             resultElem.innerText = calculate(number1, number2, operation);
         }
         operationLock = true;
@@ -127,6 +126,4 @@ equalsElem.addEventListener('click', event => {
  * Insert floatingpoint numbers with 0-prefix (0,42)
  * Implement Delete, Clear and ClearAll
  * Seperator for number-pairs (1.000.000)
- */
-
-
+*/

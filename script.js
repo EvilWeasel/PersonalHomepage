@@ -63,3 +63,36 @@ searchFieldElem.addEventListener("keydown", event => {
 /* EventListener => suche starten ENTER */
 
 /* EventListener => suchfeld schließt ESC */
+
+
+
+
+const jokeElem = document.querySelector('[data-joke]');
+// Rufe die Chuck-Norris API auf und hole einen zufälligen
+//  Witz aus der Kategorie "DEV"
+fetch('https://api.chucknorris.io/jokes/random?category=dev')
+    .then(httpResponse => {
+        return httpResponse.json();
+    }).then(joke => {
+        jokeElem.innerText = joke.value;
+    });
+
+
+
+const pokeInput = document.querySelector('[data-pokeInput]');
+const pokeButton = document.querySelector('#btnPokeSearch');
+const pokeElem = document.querySelector('[data-poke]');
+pokeButton.addEventListener('click', event => {
+    pokeElem.innerText = "";
+    fetch('https://pokeapi.co/api/v2/pokemon/' + pokeInput.value)
+        .then(httpResponse => httpResponse.json())
+        .then(pokemon => fetch(pokemon.location_area_encounters)
+            .then(httpResponse => httpResponse.json())
+            .then(locationList => {
+                console.log(locationList)
+                for (catchLocation of locationList) {
+                    pokeElem.innerText += catchLocation.location_area.name + ', ';
+                }
+            })
+        )
+});
