@@ -26,13 +26,15 @@ let operationLock = false;
 
 numberElems.forEach(btnNumber => {
     btnNumber.addEventListener('click', event => {
-        // Wenn der geclickte Button "," ist UND 
-        //  resultElem bereits ein Komma enthält
+        // Wenn unmittelbar vor Eingabe der aktuellen Zahl ein OperationButton
+        //  gedrückt wurde, wird die Zahl "gesetzt" und nicht "hinzugefügt"
         if (operationLock) {
             resultElem.innerText = event.target.innerText;
             operationLock = false;
             return;
         }
+        // Wenn der geclickte Button "," ist UND 
+        //  resultElem bereits ein Komma enthält
         if (event.target.innerText == "," && 
             resultElem.innerText.includes(",")) {
             return;
@@ -58,6 +60,19 @@ numberElems.forEach(btnNumber => {
 */
 for (btnOperation of operationElems) {
     btnOperation.addEventListener('click', event => {
+        // Wenn nach der Eingabe von 2 Zahlen und einer entsprechenden Operation
+        //  anstatt dem EqualsButton eine weiter Operation gewählt wird,
+        //  berechnen wir zuerst das Ergebnis der vorherigen Operation
+        const regex = /[+\-*\/]/; // Erstelle eine RegEx, die die Symbole +, -, *, oder / erkennt
+
+        if (regex.test(subtotalElem.innerText)) {
+            let number1 = subtotalElem.innerText.split(' ')[0];
+            let number2 = resultElem.innerText;
+            let operation = subtotalElem.innerText.split(' ')[1];
+        
+        
+            resultElem.innerText = calculate(number1, number2, operation);
+        }
         operationLock = true;
         let number = resultElem.innerText;
         let operation = event.target.innerText;
@@ -113,3 +128,5 @@ equalsElem.addEventListener('click', event => {
  * Implement Delete, Clear and ClearAll
  * Seperator for number-pairs (1.000.000)
  */
+
+
